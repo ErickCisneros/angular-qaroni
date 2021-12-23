@@ -1,0 +1,13 @@
+<div class="container pb-1">
+    <mat-card *ngFor="let new of news | async | filter:filterString" class="mb-4 mat-elevation-z3">
+        <mat-card-subtitle>{{ new.date }}</mat-card-subtitle>
+        <mat-card-title class="mat-subheading-2">{{ new.title | uppercase }}</mat-card-title>
+        <mat-card-content [innerHTML]="new.shortDescription"></mat-card-content>
+        <mat-card-actions>
+            <a mat-raised-button color="primary" [routerLink]="'read/'+new.slug" [queryParams]="{id: new.newId}">
+                <mat-icon matPrefix>article</mat-icon>
+                <span>Read more</span>
+            </a>
+        </mat-card-actions>
+    </mat-card>
+</div>
