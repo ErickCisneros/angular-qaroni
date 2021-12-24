@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { GroupsComponent } from './groups.component';
 
 describe('GroupsComponent', () => {
@@ -8,6 +9,7 @@ describe('GroupsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ],
       declarations: [ GroupsComponent ]
     })
     .compileComponents();
