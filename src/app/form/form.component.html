@@ -1,0 +1,90 @@
+<form class="container" [formGroup]="personForm" (ngSubmit)="send()">
+    <div class="row mt-3">
+        <div class="col-4">
+            <mat-card class="mat-elevation-z7">
+                <mat-card-title>Form person</mat-card-title>
+                <mat-card-content>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>ID</mat-label>
+                        <input matInput formControlName="id" id="{{'id'}}" type="text" placeholder="2450139338" autofocus required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" id="{{'name'}}" type="text" placeholder="Erick Alejandro" required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Lastname</mat-label>
+                        <input matInput formControlName="lastname" id="{{'lastname'}}" type="text" placeholder="Cisneros Matias" required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Birthdate</mat-label>
+                        <input matInput formControlName="birthdate" id="{{'birthdate'}}" type="date" required>
+                    </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div class="row">
+                        <div class="col">
+                            <button mat-raised-button type="button" color="accent" (click)="addChilds()" class="form-button">Add
+                                Child</button>
+                        </div>
+                        <div class="col">
+                            <button mat-raised-button type="button" color="accent" (click)="addMovies()" class="form-button">Add
+                                Movie</button>
+                        </div>
+                    </div>
+                    <button mat-raised-button type="submit" color="primary" class="form-button"
+                        [disabled]="!personForm.valid">Send</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div class="col-4">
+            <mat-card formArrayName="childs" *ngFor="let child of childs.controls; let i=index" class="mat-elevation-z7 mb-3">
+                <mat-card-title>Forms child {{i+1}}</mat-card-title>
+                <mat-card-content [formGroupName]="i">
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>ID</mat-label>
+                        <input matInput formControlName="id" id="{{'id'+i}}" type="text" placeholder="2450139338" autofocus required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" id="{{'name'+i}}" type="text" placeholder="Erick Alejandro" required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Lastname</mat-label>
+                        <input matInput formControlName="lastname" id="{{'lastname'+i}}" type="text" placeholder="Cisneros Matias" required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Birthdate</mat-label>
+                        <input matInput formControlName="birthdate" id="{{'birthdate'+i}}" type="date" required>
+                    </mat-form-field>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-4">
+            <mat-card formArrayName="movies" *ngFor="let movie of movies.controls; let i=index" class="mat-elevation-z7 mb-3">
+                <mat-card-title>Forms movie {{i+1}}</mat-card-title>
+                <mat-card-content [formGroupName]="i">
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" id="{{'name'+i}}" type="text" placeholder="Timeline" autofocus required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Director</mat-label>
+                        <input matInput formControlName="director" id="{{'director'+i}}" type="text" placeholder="Richard Donner" required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Year</mat-label>
+                        <input matInput formControlName="year" id="{{'year'+i}}" type="text" placeholder="2003" required>
+                    </mat-form-field>
+                    <mat-form-field class="form-field" appearance="outline">
+                        <mat-label>Oscar</mat-label>
+                        <mat-select formControlName="oscar" id="{{'oscar'+i}}">
+                          <mat-option value="true">Yes</mat-option>
+                          <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</form>

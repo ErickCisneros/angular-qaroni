@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
 
 const materials: any[] = [
   MatToolbarModule,
@@ -17,6 +18,7 @@ const materials: any[] = [
   MatBadgeModule,
   MatSidenavModule,
   MatListModule,
+  MatSelectModule
 ];
 
 @NgModule({
