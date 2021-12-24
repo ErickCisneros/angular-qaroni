@@ -4,14 +4,14 @@
         <mat-card-content>
             <mat-form-field class="form-field" appearance="fill">
                 <mat-label>E-mail</mat-label>
-                <input matInput formControlName="username" type="email" placeholder="example@qaroni.com">
+                <input matInput formControlName="username" type="email" placeholder="example@qaroni.com" required>
             </mat-form-field>
             <mat-form-field class="form-field" appearance="fill">
                 <mat-label>Password</mat-label>
-                <input matInput formControlName="password" type="password" placeholder="Type your secret password">
+                <input matInput formControlName="password" type="password" placeholder="Type your secret password" required>
             </mat-form-field>
             <mat-card-actions>
-                <button mat-raised-button type="submit" color="primary" class="form-button">Login</button>
+                <button mat-raised-button type="submit" color="primary" class="form-button" [disabled]="!loginForm.valid">Login</button>
                 <a mat-raised-button routerLink="/auth/signup" color="accent" class="form-button">Sign-Up</a>
             </mat-card-actions>
         </mat-card-content>
