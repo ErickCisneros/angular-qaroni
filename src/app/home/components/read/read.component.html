@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 <div class="container">
-    <mat-card *ngIf="news">
+    <mat-card *ngIf="news" class="mat-elevation-z7">
         <mat-card-subtitle>{{ news.date }}</mat-card-subtitle>
         <mat-card-title class="mat-subheading-2">{{ news.title | uppercase }}</mat-card-title>
         <img mat-card-image [src]="news.imageUrl" alt="Image news">

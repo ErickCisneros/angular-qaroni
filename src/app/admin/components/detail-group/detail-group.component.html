@@ -1,0 +1,15 @@
+<mat-card *ngIf="group">
+    <mat-card-subtitle>{{ group.groupId }}</mat-card-subtitle>
+    <mat-card-title class="mat-subheading-2">{{ group.name | uppercase }}</mat-card-title>
+    <img mat-card-image [src]="group.imageUrl" alt="Image news">
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item role="listitem"><strong>MerchantID:</strong>{{ group.merchantId }}</mat-list-item>
+            <mat-list-item role="listitem"><strong>SerieID:</strong>{{ group.serieId }}</mat-list-item>
+            <mat-list-item role="listitem"><strong>GroupID:</strong>{{ group.groupId }}</mat-list-item>
+            <mat-list-item role="listitem"><strong>Type:</strong>{{ group.type }}</mat-list-item>
+            <mat-list-item role="listitem"><strong>Paid:</strong>{{ group.isPaid }}</mat-list-item>
+            <mat-list-item role="listitem"><strong>Partner:</strong>{{ group.isPartner }}</mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

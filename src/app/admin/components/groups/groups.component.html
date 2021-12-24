@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 my-2" *ngFor="let group of groups | async">
+            <mat-card class="mat-elevation-z7">
+                <mat-card-subtitle>{{ group.groupId }}</mat-card-subtitle>
+                <mat-card-title>{{ group.name }}</mat-card-title>
+                <mat-card-actions>
+                    <a mat-raised-button color="primary" [routerLink]="'read/'+group.slug" [queryParams]="{id: group.groupId}">
+                        <mat-icon matPrefix>article</mat-icon>
+                        <span>Read more</span>
+                    </a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
