@@ -24,4 +24,11 @@ describe('FormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have been called send()', () => {
+    const sendSpy = spyOn(component, 'send')
+    sendSpy.and.returnValue()
+    component.send()
+    expect(component.send).toHaveBeenCalled()
+  });
 });
